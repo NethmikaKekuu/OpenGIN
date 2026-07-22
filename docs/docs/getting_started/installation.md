@@ -5,7 +5,7 @@
 ### Prerequisites
 - Docker and Docker Compose
 - Go 1.19+ (for CORE service)
-- Ballerina (for APIs)
+- Ballerina 2201.13.4 (for APIs)
 
 ### Start the System
 
@@ -13,12 +13,15 @@
    ```bash
    docker-compose up -d mongodb neo4j postgres
    ```
+2. **Ingest data to the databases using data backups (for development)**
 
-2. **Start CORE service**
+   Sample development backups (MongoDB, Neo4j, PostgreSQL) and a data insertion script are available in [LDFLK/data-backups](https://github.com/LDFLK/data-backups). See that repository for the backup files and `opengin/scripts/insert_data.py`.
+
+3. **Start CORE service**
    ```bash
    docker-compose up -d core
    ```
-3. **Start APIs**
+4. **Start APIs**
    ```bash
    docker-compose up -d ingestion read
    ```
