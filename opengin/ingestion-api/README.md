@@ -40,11 +40,21 @@ export INGESTION_SERVICE_PORT=8080
 
 ## Development
 
+For LINUX & macOS
 ```bash
 cd ingestion-api
 cp env.template .env
 # update the required fields to set the environment variables
 source .env
+bal test
+```
+
+For Windows (PowerShell)
+```powershell
+cd ingestion-api
+Copy-Item env.template.ps1 .env.ps1
+# update the required fields to set the environment variables
+. .\.env.ps1
 bal test
 ```
 

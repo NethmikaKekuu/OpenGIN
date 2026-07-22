@@ -48,12 +48,11 @@ bal run
 ```
 
 For windows (make sure you open the **Powershell CLI**)
-```bash
+```powershell
 cd opengin/read-api
-echo .env
+Copy-Item env.template.ps1 .env.ps1
 # after updating the required fields to be added to the environment
-# you have to copy and paste the env configurations on the Powershell CLI
-# (you can find the example env configurations here)
+. .\.env.ps1
 # make sure core service is running
 bal test
 bal run
