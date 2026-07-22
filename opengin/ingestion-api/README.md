@@ -31,11 +31,20 @@ bal grpc --mode client --input ../core-api/protos/types_v1.proto --output .
 
 Following are the default values you should use. 
 
+For LINUX & macOS
 ```bash
 export CORE_SERVICE_HOST=localhost
 export CORE_SERVICE_PORT=50051
 export INGESTION_SERVICE_HOST=localhost
 export INGESTION_SERVICE_PORT=8080
+```
+
+For Windows (PowerShell)
+```powershell
+$env:CORE_SERVICE_HOST="localhost"
+$env:CORE_SERVICE_PORT="50051"
+$env:INGESTION_SERVICE_HOST="localhost"
+$env:INGESTION_SERVICE_PORT="8080"
 ```
 
 ## Development
@@ -60,7 +69,8 @@ bal test
 
 ## Run Test
 
-Make sure the CORE server is running. (`cd design/core-api; ./core-server`)
+Make sure the CORE server is running.
+(LINUX & macOS: `cd opengin/core-api && ./core-service`; Windows: `cd opengin/core-api; .\core-service.exe`)
 
 ```bash
 # Run all tests in the current package
