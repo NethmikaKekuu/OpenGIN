@@ -13,16 +13,12 @@
    ```bash
    docker-compose up -d mongodb neo4j postgres
    ```
-   > To use cloud databases (e.g. Neo4j Aura, MongoDB Atlas) instead of local containers, skip this step and follow the "Locally, without Docker" instructions below, which run CORE directly and let you point it at cloud connection strings via `.env`.
-2. **Ingest data to the databases using data backups (for development)**
 
-   Sample development backups (MongoDB, Neo4j, PostgreSQL) and a data insertion script are available in [LDFLK/data-backups](https://github.com/LDFLK/data-backups). See that repository for the backup files and `opengin/scripts/insert_data.py`.
-
-3. **Start CORE service**
+2. **Start CORE service**
    ```bash
    docker-compose up -d core
    ```
-4. **Start APIs**
+3. **Start APIs**
    ```bash
    docker-compose up -d ingestion read
    ```
@@ -54,11 +50,7 @@
 
    Note Neo4j Aura uses the `neo4j+s://` scheme (encrypted), not `bolt://` — using `bolt://` against an Aura instance will fail to connect.
 
-2. **Ingest data to the databases using data backups (for development)**
-
-   Sample development backups (MongoDB, Neo4j, PostgreSQL) and a data insertion script are available in [LDFLK/data-backups](https://github.com/LDFLK/data-backups). See that repository for the backup files and `opengin/scripts/insert_data.py`.
-
-3. **Start CORE service**
+2. **Start CORE service**
 
    For LINUX & macOS
    ```bash
@@ -80,7 +72,7 @@
 
    See [core-api/README.md](../../../opengin/core-api/README.md) for details.
 
-4. **Start ingestion-api** (make sure CORE service is running)
+3. **Start ingestion-api** (make sure CORE service is running)
 
    For LINUX & macOS
    ```bash
@@ -100,7 +92,7 @@
 
    See [ingestion-api/README.md](../../../opengin/ingestion-api/README.md) for details.
 
-5. **Start read-api** (make sure CORE service is running)
+4. **Start read-api** (make sure CORE service is running)
 
    For LINUX & macOS
    ```bash
